@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arorw Functions</title>
+</head>
+
+<body>
+    <input type="button" value="Enviar">
+    <script>
+        //Sintax
+
+        //Estudos 25/02/23
+
+        // (a,b) => {
+        //     return a + b
+        //     //Podendo utilizar dessa forma!
+        // }
+
+        // (a,b) => a+b
+        //     //Ou dessa forma aqui!
+
+
+        let num01 = 10
+
+        let num02 = 2
+
+        const soma = (num01, num02) => num01 + num02
+
+        console.log(soma(num01, num02));
+
+        console.log('----------------')
+
+        //Com o scorpo um recebendo mais coisas
+
+        const define = () => {
+            //Definindo ela vazia
+
+            let result = ''
+
+            if (num01 > num02) {
+                result = num01 * num02
+
+            } else {
+                result = num01 % num02
+            }
+
+            return result
+        }
+
+        console.log(define(num01, num02));
+
+        console.log('--------------')
+
+        //Definindo uma array com uma arrow funtion
+        let frase = 'Hoje estou estudando arrow functions'
+
+        const array_ = (frase) => frase.split(' ')
+
+        console.log(array_(frase));
+
+        //Declarando sem parâmetros!
+
+        const sem = () => console.log('Sem argumentos!');
+
+        sem()
+
+        let roupas = [
+
+            { produto: 'camisa', preco: 40 },
+            { produto: 'calca', preco: 50 },
+            { produto: 'perfume', preco: 60 },
+            { produto: 'cueca', preco: 40 },
+
+        ]
+
+        //Objeto
+
+        let maior50 = roupas.filter((roupa) => {
+            return roupa.preco >= 50
+        })
+
+        console.log(maior50);
+        
+
+        // setTimeout(() => {
+        //     console.log('deu tempo')
+        // })
+
+        let ob = {
+            nome: 'Lucas',
+            fun: function () {
+                console.log(this.nome)
+            }
+        }
+        //Não vai funcionar pois ela não consegue tratar objetos atravaés de DOM
+
+        ob.fun()/*Tem que passar o nome da função... com arrow functions não seria possivel pois arrow functions n conseguem tratar elementos DOM
+
+         sayname: () => {
+         console.log(this.nome);
+        }
+        */
+
+        //Criando evento 
+
+        let botao = document.getElementsByTagName('input')[0]
+
+        botao.addEventListener('click', function () {
+            this.classList.toggle('classe');
+        });
+
+    </script>
+</body>
+
+</html>
