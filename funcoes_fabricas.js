@@ -12,9 +12,8 @@ function Criapessoa(nome, sobrenome, peso = 0, altura = 0) {
         },
 
         //Colocando os setters
-        set NomeCompleto(valor) {
-            valor = valor.split(' ')
-            this.nome = valor.shift()
+        NomeCompleto(valor) {
+            this.nome = valor
         },
 
         Teste: function (texto) {
@@ -32,4 +31,5 @@ function Criapessoa(nome, sobrenome, peso = 0, altura = 0) {
 
 let Ob = Criapessoa('luiz', 'oliveira', 73, 1.87)
 //let resul = Ob.Teste('JavaScript')
-console.log(Ob.nome); 
+Ob.NomeCompleto('Junior')
+console.log(Ob.nome);
