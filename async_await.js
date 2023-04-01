@@ -14,3 +14,4 @@ async function Pgadados2() {
     return(result)
 }
 
+console.log(Pegadados())
