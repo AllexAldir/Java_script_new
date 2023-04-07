@@ -1,6 +1,6 @@
 //Utilizando uma funcao geradora
 
-function* retorna(nome) {
+function* retorna() {
     yield function passo1() {
         console.log('Aqui está o passo 01')
     }
@@ -13,15 +13,15 @@ function* retorna(nome) {
         console.log('Aqui está o passo 03')
     }
 
-    yield function passo4() {
-        return nome
+    yield function passo4(nome){
+        console.log(`O nome é ${nome}`)
     }
+}   
+
+let ob = retorna()
+//console.log(ob)
+
+for(let i of ob){
+    i('Lucas') //caso não receba parâmetro recebe nada
 }
 
-let ob = retorna().next()
-let ob2 = retorna().next()
-let valor01 = ob.value
-let valor02 = ob2.value
-valor02()
-
-//por enquanto está somente retornando um valor de uma função
