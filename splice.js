@@ -24,4 +24,4 @@ while (array02.length < 50) {
 
 array01.splice(2, 1, 'Campos') //aqui quero remova 1 elemento do indice 2 e adicione 'Campos'
 
-console.log(array01)
+console.log(array01)    
