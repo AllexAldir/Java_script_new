@@ -5,15 +5,20 @@ function Contrutor_pessoa(nome, idade, sexo) {
     this.idade = idade
     this.sexo = sexo
 
-    this.sayhello = () => {
-        console.log(`Teste ${this.nome}`)
-    }
+    // this.sayhello = () => {
+    //     console.log(`Teste ${this.nome}`)
+    // }
 
-    Object.freeze(this)
+
 }
 
-let resposta = new Contrutor_pessoa('joão', 45, 'm')
+Contrutor_pessoa.prototype.sayhello = () => console.log(`Teste ${ob.nome}`) //Prototype
 
-resposta.nome = 'lucas'
+const ob = new Contrutor_pessoa('Jorge', 21, 'm')
+Object.defineProperty(ob, 'idade', { //Configurar os valores dos atributos
+    writable: false,
+    enumerable: true,
+    value: ob.idade
+})
 
-console.log(resposta)
+ob.sayhello()
