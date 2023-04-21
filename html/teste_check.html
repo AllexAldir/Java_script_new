@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+    <h1>Teste</h1>
+
+    <div class="contanier">
+        <input type="checkbox" name="" id="IP01" class="geral">teste1
+        <input type="checkbox" name="" id="IP_02" class="geral">teste2
+    </div>
+
+    <script>
+        //alert()
+        let teste = () => alert('ok')
+
+        $('#IP01').click(() => {
+
+            if ($('#IP01').prop('checked')) teste() //Teste para captar o evento de click do checkbox
+
+        });
+
+    </script>
+</body>
+
+</html>
