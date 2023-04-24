@@ -1,5 +1,5 @@
 class Pessoa {
-    constructor(nome, idade) {
+    constructor(nome, idade = 'não colocada') {
         this.nome = nome
         this.idade = idade
     }
@@ -19,4 +19,24 @@ class Cnh extends Pessoa {
 
 const pessoa = new Pessoa('Lucas', 23)
 const cnh = new Cnh('Carlos', 25, 748569, 'Jeta')
-cnh.fala_idade()
+//cnh.fala_idade()
+
+
+/*-------------------------------------------*/
+
+class Carro extends Pessoa {
+    constructor(nome, modelo, marca, preco) {
+        super(nome)
+        this.modelo = modelo
+        this.marca = marca
+        this.preco = preco
+    }
+
+    aumento(x) {
+        this.preco = this.preco + (this.preco * (x / 100))
+    }
+}
+
+const carro = new Carro('Lucas', 'Enzo', 'Ferrari',15000)
+carro.aumento(10)
+console.log(carro)
