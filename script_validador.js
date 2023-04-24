@@ -10,7 +10,9 @@ $(document).ready(() => {
 
             geral() {
                 const soma_total = this.calcula() + this.calcula2()
-                if (this.valor.slice(-2) == soma_total) alert('ok')
+                //console.log(this.calcula(),this.calcula2())
+                if (this.valor.slice(-2) == soma_total) alert('cpf valido')
+                
             }
 
             calcula() {
@@ -25,16 +27,18 @@ $(document).ready(() => {
                     return ac
                 }, 0)
 
-                const digito = 11 - (11 % soma)
+                const digito = 11 - (soma % 11)
 
-                return digito
+                return digito >= 10 ? '0' : digito
 
             }
 
             calcula2() {
                 const nove = this.valor.slice(0, -2) //retorna o 9 numeros
                 const dez = nove + this.calcula()
-                const array = Array.from(nove)
+                //console.log(dez)
+                const array = Array.from(dez)
+                //console.log(array)
                 let cont = 11
 
                 const soma = array.reduce((ac, val) => {
@@ -43,16 +47,17 @@ $(document).ready(() => {
                     return ac
                 }, 0)
 
-                const digito = 11 - (11 % soma)
+                //console.log(soma)
+                const digito = 11 - (soma % 11)
+                //console.log(digito)
 
-                return digito
+                return digito >= 10 ? '0' : digito
 
             }
 
         }
 
         let teste = new verifica(valor)
-
         teste.geral()
 
     })
