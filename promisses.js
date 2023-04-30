@@ -11,12 +11,12 @@ const num = () => Math.round(Math.random() * (10000 - 1000) + 1)
 
 function espera(ms, tempo) {
     return new Promise((resolve, reject) => {
+        if (typeof ms !== 'string') reject(new Error('Teste de erro'))
         //Espera uma promessa (resolve executa o dado certo)
         //reject se occorer algum erro 
 
         setTimeout(() => {
             resolve(ms) //retorna a mensagem
-            reject('erro ao receber o valor')
         }, tempo)
     })
 
@@ -31,4 +31,4 @@ espera('Teste agora', 4000)
         console.log(e)
         //return e
     })
-    
+
