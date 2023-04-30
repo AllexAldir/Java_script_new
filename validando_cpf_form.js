@@ -1,7 +1,7 @@
 $(document).ready(function () {
-    $('#enviar').on('click', function () {
+    $('#cpf_').on('change', function () {
         const cpf = $('#cpf_').val()
-
+        console.log(cpf)
 
         class Cpf {
             constructor(cpf) {
@@ -12,11 +12,16 @@ $(document).ready(function () {
             resultado() {
                 const cpf_nove = this.valida().slice(0, -2)
                 const digito1 = this.pegardigito(cpf_nove)
-                //console.log(digito1)
                 const cpf_dez = cpf_nove + digito1
                 const digito2 = this.pegardigito(cpf_dez)
                 const resultado = cpf_dez + digito2
-                if(resultado == this.cpf) alert('ok')
+                if (resultado == this.cpf) {
+                    $('#D_error_cpf').css('color', 'green')
+                    $('#D_error_cpf').html('cpf é valido')
+                } else {
+                    $('#D_error_cpf').css('color', 'red')
+                    $('#D_error_cpf').html('cpf é inválido')
+                }
             }
 
 
