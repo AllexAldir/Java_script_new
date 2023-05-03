@@ -1,8 +1,8 @@
 $('#teste01').on('click', function (e) {
     e.preventDefault()
 
-    let href = $('#teste01').prop('html')
-    console.log(href)
+    let href = $('#teste01').prop('href')
+    //console.log(href)
     
     function ajax(ob) {
         return new Promise((resolve, reject) => {
