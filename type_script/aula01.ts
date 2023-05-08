@@ -52,3 +52,19 @@ function liguagem(x: Teste) {
 }
 
 console.log(liguagem("python"))
+
+/*---------------------------------------------*/
+
+//Herança com typescritp
+
+class Pessoa extends Aluno {
+
+    sexo: string; //Faz parte dessa classe
+
+    constructor(Nome: string, SobreNome: string, idade: number, sexo: string) {
+        super(Nome, SobreNome, idade);
+        this.sexo = sexo;
+    }
+}
+
+const ob2 = new Pessoa('Carlos', 'Santana', 23, 'm')
