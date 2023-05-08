@@ -6,27 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FetchApi</title>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
+    <style>
+        #geral{
+            width: 50%;
+            margin: auto;
+        }
+
+    </style>
 </head>
 <body>
     <h1>Fecth API</h1>
-    <div class="pai">
-        <div class="contaniera">
-            <p>Teste para mostra o resultado da requisição do json</p>
-            <table id="teste">
-                <thead>
-                    <th>nome</th>
-                    <th>email</th>
-                    <th>salario</th>
-                    <th>Estado</th>
-                    <th>idade</th>
-                </thead>
-
-            </table>
+        <div id="geral">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Dados</h3>
+                            <div class="card-tools">
+                                <div class="input-group input-group-sm" style="width: 150px;">
+                                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-default">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="card-body table-responsive p-0" style="height: 300px;">
+                            <table class="table table-head-fixed text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>CPF</th>
+                                        <th>EMAIL</th>
+                                        <th>EMPRESA</th>
+                                        <th>ESTADO</th>
+                                        <th>NOME</th>
+                                        <th>SALARIO</th>
+                                        <th>IDADE</th>
+                                        <th>SEXO</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="teste">
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+            
+                    </div>
+            
+                </div>
+            </div>
+                </div>
         </div>
-
-    </div>
     
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script src="../fecth_api/fetch_Api_axios.js"></script>
+    
 </body>
 </html>
