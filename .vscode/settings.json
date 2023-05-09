@@ -1,5 +1,8 @@
 {
     "liveServer.settings.multiRootWorkspaceName": "Java_script_new",
     "window.zoomLevel": 0,
+    "code-runner.executorMap": {
+        "typescript": "npx ts-node --files", //Compilador para o node
+    }
     
 }
